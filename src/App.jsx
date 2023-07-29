@@ -5,12 +5,12 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-  const [title, setTitle] = useState('');
+  const [apiStatus, setApiStatus] = useState('ko');
 
   useEffect(() => {
-    fetch('/api').then((res) => res.json())
+    fetch('/api/users/test').then((res) => res.json())
       .then((data) => {
-        setTitle(data.title);
+        setApiStatus(data.test);
       }).
       catch ((err) => {
       console.log(err);
@@ -27,7 +27,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>{title}</h1>
+      <h3>Api is {apiStatus}</h3>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           Count is {count}

@@ -1,0 +1,14 @@
+{
+	"extends": "../sparks.code-workspace",
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"extensions": {
+		"recommendations": []
+	},
+	"settings": {
+		"DockerRun.DisableAutoGenerateConfig": true
+	},
+}
