@@ -8,11 +8,8 @@ function App() {
   const [apiStatus, setApiStatus] = useState('ko');
 
   useEffect(() => {
-    fetch('/api/users/test').then((res) => res.json())
-      .then((data) => {
-        setApiStatus(data.test);
-      }).
-      catch ((err) => {
+    fetch('/api/v1/users').then((res) => setApiStatus(res.status))  
+      .catch ((err) => {
       console.log(err);
     });
   }, []);
